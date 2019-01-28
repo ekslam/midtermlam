@@ -8,11 +8,7 @@ def index(request):
     content = {}
     post = Post.objects.all()
     content['post'] = post
-    #context['questions'] = questions
-    if request.is_ajax:
-        return render(request,'index.html',content)
-    else:
-        return HttpResponse(status=400)
+    return render(request,'index.html',content)
 
 def detail(request, post_id):
     content = {}

@@ -7,11 +7,10 @@ class Post(models.Model):
     content = models.TextField()
     is_active = models.NullBooleanField()
 
+    def __str__(self):
+        return 'Post: {}'.format(self.title)
+        
 class Comment(models.Model):
     date_created = models.DateTimeField('Date Created')
     content = models.TextField()
     post = models.ForeignKey('Post', on_delete = models.CASCADE, null = True, blank = True)
-
-
-    #def __str__(self):
-    #    return 'Questions: {}'.format(self.question_text)
