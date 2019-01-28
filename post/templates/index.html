@@ -8,7 +8,7 @@
   <ol>
   {% for post in posts %}
   <li>
-    <<a href="{% url 'post:detail' post.id %}">Post: {{post.title }} <br/>
+    <<a href="{% url 'post:detail' post.id %}">Post: {{ post.title }} <br/>
 
   </li>
   {% endfor %}
