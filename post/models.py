@@ -5,15 +5,12 @@ class Post(models.Model):
     date_created = models.DateTimeField('date created')
     date_updated = models.DateTimeField('date updated')
     content = models.TextField()
-    is_active = BooleanField()
-
-    def __str__(self):
-        return 'Posts: {}'.format(self.title)
+    is_active = models.NullBooleanField()
 
 class Comment(models.Model):
     date_created = models.DateTimeField('Date Created')
     content = models.TextField()
-    post = models.ForeignKey('Post', on_delete = models.CASCADE, related_name ="comment")
+    post = models.ForeignKey('Post', on_delete = models.CASCADE, null = True, blank = True)
 
 
     #def __str__(self):
