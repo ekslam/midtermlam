@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  This is the Detail page
+{% endblock %}
+
+{% block body %}
+  {{ post.title }} <br/>
+  {{ post.date_created }} <br/>
+  {{ post.content }} <br/>
+  {% for comment in post.comment.all %}
+    {{ comment.comment }} <br/>
+  {% endfor %}
+{% endblock %}
